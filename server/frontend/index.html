@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обработка изображений</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+        <div class="container">
+        <h1>Обработка изображений</h1>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'upload')">📁 Загрузить</button>
+        </div>
+
+        <div id="upload" class="tab-content">
+            <div class="upload-area">
+                <label for="fileInput" class="file-label">
+                    <span>Выберите изображение или перетащите файл</span>
+                    <input type="file" id="fileInput" accept="image/*">
+                </label>
+                <div id="upload-preview-container" style="display: none;">
+                    <img id="upload-preview" alt="Загруженное изображение">
+                </div>
+            </div>
+            <button id="uploadBtn" class="action-button" disabled>📤 Отправить фото</button>
+        </div>
+
+        <div class="mode-select">
+            <h3>Выберите режим обработки:</h3>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="mode" value="1" checked>
+                    <span>OCR (Распознать текст)</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="mode" value="2">
+                    <span>Генерация подписи</span>
+                </label>
+            </div>
+            <div class="speech-option">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="speechOption">
+                    <span>Зачитать результат вслух</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="result-container">
+            <h3>Результат:</h3>
+            <div id="responseText" class="response-box">Здесь появится результат обработки...</div>
+            <div class="speech-controls" style="display: none;">
+                <button id="pauseResumeBtn" class="speech-button">Пауза</button>
+                <button id="stopBtn" class="speech-button">Стоп</button>
+            </div>
+            <div class="loader" id="loader" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    </div>
+</body>
+</html>
