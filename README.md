@@ -77,7 +77,7 @@ python.exe main.py
 ## 📖 Использование
 
 ### Веб-приложение
-1. Откройте браузер и перейдите на сайт [visioassist.ru](https://visioassist.ru)
+1. Откройте браузер и перейдите на сайт [visioassist.ru](http://visioassist.ru)
 2. Загрузите изображение, перетащив его в соответствующую область
 3. Выберите режим обработки: OCR или генерация описания
 4. При необходимости включите озвучивание результатов
@@ -173,7 +173,7 @@ python.exe main.py
 ## 📖 Usage
 
 ### Web Application
-1. Open your browser and go to [visioassist.ru](https://visioassist.ru)
+1. Open your browser and go to [visioassist.ru](http://visioassist.ru)
 2. Upload an image by dragging it to the appropriate area
 3. Select the processing mode: OCR or description generation
 4. If needed, enable result vocalization
