@@ -18,7 +18,7 @@ last_button2_state = 1
 
 sound = SileroTTS()
 ocr = TesseractOCRProcessor()
-time.sleep(1)
+time.sleep(10)
 connect_server = ping()
 sound.play('Есть соединение с сервером' if connect_server else 'Нет соединения с сервером')
 
