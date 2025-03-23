@@ -163,4 +163,14 @@ function openTab(event, tabName) {
     responseText.textContent = "Здесь появится результат обработки...";
     stopSpeech();
     speechControls.style.display = 'none';
+    
+    if (tabName === 'lastPhoto') {
+        loadLastProcessedImage();
+    }
+}
+
+function loadLastProcessedImage() {
+    const lastImageElement = document.getElementById('last-processed-image');
+    lastImageElement.src = "http://91.77.167.51:5000/last_image?" + new Date().getTime();
+    lastImageElement.style.display = 'block'
 }

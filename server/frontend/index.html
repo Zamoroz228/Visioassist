@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-        <div class="container">
+    <div class="container">
         <h1>Обработка изображений</h1>
 
         <div class="tabs">
             <button class="tab-button active" onclick="openTab(event, 'upload')">📁 Загрузить</button>
+            <button class="tab-button" onclick="openTab(event, 'lastPhoto')">🖼️ Последнее обрабатываемое фото</button>
         </div>
 
         <div id="upload" class="tab-content">
@@ -27,6 +28,11 @@
             <button id="uploadBtn" class="action-button" disabled>📤 Отправить фото</button>
         </div>
 
+        <div id="lastPhoto" class="tab-content" style="display: none;">
+            <div class="last-photo-container">
+                <img id="last-processed-image" alt="Последнее обрабатываемое фото">
+            </div>
+        </div>
         <div class="mode-select">
             <h3>Выберите режим обработки:</h3>
             <div class="radio-group">
@@ -59,6 +65,5 @@
     </div>
 
     <script src="script.js"></script>
-    </div>
 </body>
 </html>
