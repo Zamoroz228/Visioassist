@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 from PIL import Image, ExifTags
 from neural_network import generate_caption, initialize_model
@@ -27,6 +27,7 @@ def fix_image_orientation(image):
                 
         if orientation_key and orientation_key in exif:
             orientation = exif[orientation_key]
+            
             if orientation == 2:
                 image = image.transpose(Image.FLIP_LEFT_RIGHT)
             elif orientation == 3:
@@ -49,12 +50,22 @@ def fix_image_orientation(image):
     
 
 @app.route('/test', methods=['GET'])
-
 def test():
     return jsonify({'status': 'ok'})
 
-@app.route('/process_image', methods=['POST'])
+@app.route('/last_image', methods=['GET'])
+def get_last_image():
+    try:
+        file_path = os.path.join("uploads", "image.png")
+    
+        if not os.path.exists(file_path):
+            return jsonify({'error': 'Image not found'}), 404
+            
+        return send_file(file_path, mimetype='image/png')
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
+@app.route('/process_image', methods=['POST'])
 def process_image():
     try:
         
